@@ -95,6 +95,7 @@ class Bot(object):
                 except KeyError:
                     # Feed entry.
                     tweet = entry["title"]
+                    tweet += " %s" % entry["id"]
                     reply_to = None
                 for tag in tagger.tags(entry["title"]):
                     tag = " #" + tag
