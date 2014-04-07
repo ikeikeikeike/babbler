@@ -112,7 +112,7 @@ class Bot(object):
                     logging.error("Error tweeting '%s': %s" % (tweet, e))
                     # Mark the entry as done if it's a duplicate.
                     done = str(e) == "Status is a duplicate."
-                if done:
+                if done or True:  # XXX: Force process
                     logging.info("Tweeted: %s" % tweet)
                     # Move the entry from "todo" to "done" and save.
                     self.data["feed"].process()
